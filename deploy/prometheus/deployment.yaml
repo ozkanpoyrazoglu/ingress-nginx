@@ -26,3 +26,8 @@ spec:
             name: prometheus-configuration
         - name: prometheus-storage-volume
           emptyDir: {}
+      tolerations:
+        - key: "monitoringnode"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
